@@ -1,0 +1,16 @@
+{
+  "file": {
+    "file_name": "test",
+    "file_author": "Viktor",
+    "file_contain": {
+      "pages": 123,
+      "symbols": [
+        "!",
+        "#",
+        "%",
+        "&"
+      ]
+    }
+  },
+  "text":"hello"
+}
