@@ -25,6 +25,5 @@ public class JSONTests {
             assertThat(jsonObject.contacts.email).isEqualTo("viktor@gmail.com");
             assertThat(jsonObject.work).isTrue();
         }
-
     }
 }
