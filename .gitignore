@@ -20,6 +20,7 @@
 *.nar
 *.ear
 *.zip
+!file.zip
 *.tar.gz
 *.rar
 *.iml
