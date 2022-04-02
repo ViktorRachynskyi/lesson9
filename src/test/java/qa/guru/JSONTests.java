@@ -4,6 +4,7 @@ package qa.guru;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.junit.jupiter.api.Test;
+import qa.guru.domain.User;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -17,11 +18,12 @@ public class JSONTests {
     @Test
     void readJsonTest() throws Exception {
         Gson gson = new Gson();
-        try (InputStream is = classLoader.getResourceAsStream("files/file.json")) {
+        try (InputStream is = classLoader.getResourceAsStream("files/user.json")) {
             String json = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-            JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
-            assertThat(jsonObject.get("text").getAsString()).isEqualTo("hello");
-            assertThat(jsonObject.get("file").getAsJsonObject().get("file_name").getAsString()).isEqualTo("test");
+            User jsonObject = gson.fromJson(json, User.class);
+            assertThat(jsonObject.name).isEqualTo("Viktor");
+            assertThat(jsonObject.contacts.email).isEqualTo("viktor@gmail.com");
+            assertThat(jsonObject.work).isTrue();
         }
 
     }
